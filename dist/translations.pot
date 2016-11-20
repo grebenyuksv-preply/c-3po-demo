@@ -3,10 +3,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: /Users/alexandermostovenko/tmp/polyglot-demo/src/index.js:4
+#: /Users/alexandermostovenko/git/polyglot-demo/src/index.js:6
 msgid "test message"
 msgstr ""
 
-#: /Users/alexandermostovenko/tmp/polyglot-demo/src/index.js:9
+#: /Users/alexandermostovenko/git/polyglot-demo/src/index.js:11
 msgid "test message with formatting ${ a }"
+msgstr ""
+
+#: /Users/alexandermostovenko/git/polyglot-demo/src/module.js:4
+msgid "literal from module"
 msgstr ""

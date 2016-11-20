@@ -1,4 +1,19 @@
-const locale = process.env.POLYGLOT_LOCALE || '';
+const extract = Boolean(process.env.WP_EXTRACT);
+const locale = process.env.WP_LOCALE;
+
+const polyglotConfig = {
+    extract: extract ? { output: 'dist/translations.pot' } : null,
+    resolve: locale ? { locale } : null,
+    locales: {
+        'en-us': 'dist/translations.po'
+    }
+};
+
+const babelConfig = {
+    presets: ['es2015'],
+    plugins: [['polyglot', polyglotConfig]]
+};
+
 
 module.exports = {
     entry: {
@@ -13,7 +28,8 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
-                loaders: ['babel-loader']
+                loader: 'babel-loader',
+                query: babelConfig
             },
         ]
     }

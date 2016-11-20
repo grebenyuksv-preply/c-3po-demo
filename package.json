@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-raw": "webpack",
-    "extract": "POLYGLOT_MODE=EXTRACT webpack",
-    "build-en": "POLYGLOT_MODE=RESOLVE POLYGLOT_LOCALE=EN_US webpack",
+    "extract": "WP_EXTRACT=1 webpack",
+    "build-en": "WP_LOCALE=en-us webpack",
     "build": "npm run build-raw && npm run build-en"
   },
   "author": "",

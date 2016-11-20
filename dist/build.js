@@ -51,6 +51,12 @@
 
 	var _polyglotRuntime = __webpack_require__(1);
 
+	var _module = __webpack_require__(2);
+
+	var _module2 = _interopRequireDefault(_module);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function test() {
@@ -60,6 +66,7 @@
 	function test2() {
 	    var a = 5;
 	    console.log((0, _polyglotRuntime.gt)(_templateObject2, a));
+	    (0, _module2.default)();
 	}
 
 /***/ },
@@ -74,6 +81,28 @@
 	exports.gt = gt;
 	function gt(val) {
 	    return val;
+	}
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _templateObject = _taggedTemplateLiteral(['literal from module'], ['literal from module']);
+
+	exports.moduleFunc = moduleFunc;
+
+	var _polyglotRuntime = __webpack_require__(1);
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	function moduleFunc() {
+	    console.log((0, _polyglotRuntime.gt)(_templateObject));
 	}
 
 /***/ }
