@@ -1,0 +1,12 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: /Users/alexandermostovenko/tmp/polyglot-demo/src/index.js:4
+msgid "test message"
+msgstr ""
+
+#: /Users/alexandermostovenko/tmp/polyglot-demo/src/index.js:9
+msgid "test message with formatting ${ a }"
+msgstr ""

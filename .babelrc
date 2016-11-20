@@ -1,0 +1,15 @@
+{
+  "presets": ["es2015"],
+  "plugins": [
+    ["polyglot", {
+      "extract": {
+        "output": "dist/translations.pot"
+      },
+      "resolve": {
+        "locales": {
+          "EN_US": "dist/translations.po"
+        }
+      }
+    }]
+  ]
+}
