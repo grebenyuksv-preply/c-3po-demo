@@ -46,13 +46,15 @@
 
 	'use strict';
 
-	var _polyglotRuntime = __webpack_require__(1);
+	var _templateObject = _taggedTemplateLiteral(['just some other random tag'], ['just some other random tag']);
 
-	var _module = __webpack_require__(2);
+	var _module = __webpack_require__(1);
 
 	var _module2 = _interopRequireDefault(_module);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function test() {
 	    console.log('test message [translation]');
@@ -61,6 +63,12 @@
 	function test2() {
 	    var a = 5;
 	    console.log('test message with formatting ' + a + ' [translation]');
+	    (0, _module2.default)();
+	}
+
+	function test3() {
+	    var a = 5;
+	    console.log(other(_templateObject));
 	    (0, _module2.default)();
 	}
 
@@ -73,26 +81,20 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.gt = gt;
-	function gt(val) {
-	    return val;
-	}
 
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
+	var _templateObject = _taggedTemplateLiteral(["literal from module"], ["literal from module"]);
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
 	exports.moduleFunc = moduleFunc;
+	exports.moduleFunc2 = moduleFunc2;
 
-	var _polyglotRuntime = __webpack_require__(1);
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function moduleFunc() {
-	    console.log('literal from module');
+	    console.log("literal from module");
+	}
+
+	function moduleFunc2() {
+	    console.log(other(_templateObject));
 	}
 
 /***/ }

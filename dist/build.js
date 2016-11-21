@@ -46,12 +46,9 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['test message'], ['test message']),
-	    _templateObject2 = _taggedTemplateLiteral(['test message with formatting ', ''], ['test message with formatting ', '']);
+	var _templateObject = _taggedTemplateLiteral(['just some other random tag'], ['just some other random tag']);
 
-	var _polyglotRuntime = __webpack_require__(1);
-
-	var _module = __webpack_require__(2);
+	var _module = __webpack_require__(1);
 
 	var _module2 = _interopRequireDefault(_module);
 
@@ -60,12 +57,18 @@
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function test() {
-	    console.log((0, _polyglotRuntime.gt)(_templateObject));
+	    console.log('test message');
 	}
 
 	function test2() {
 	    var a = 5;
-	    console.log((0, _polyglotRuntime.gt)(_templateObject2, a));
+	    console.log('test message with formatting ' + a);
+	    (0, _module2.default)();
+	}
+
+	function test3() {
+	    var a = 5;
+	    console.log(other(_templateObject));
 	    (0, _module2.default)();
 	}
 
@@ -78,31 +81,20 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.gt = gt;
-	function gt(val) {
-	    return val;
-	}
 
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _templateObject = _taggedTemplateLiteral(['literal from module'], ['literal from module']);
+	var _templateObject = _taggedTemplateLiteral(["literal from module"], ["literal from module"]);
 
 	exports.moduleFunc = moduleFunc;
-
-	var _polyglotRuntime = __webpack_require__(1);
+	exports.moduleFunc2 = moduleFunc2;
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function moduleFunc() {
-	    console.log((0, _polyglotRuntime.gt)(_templateObject));
+	    console.log("literal from module");
+	}
+
+	function moduleFunc2() {
+	    console.log(other(_templateObject));
 	}
 
 /***/ }
