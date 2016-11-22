@@ -1,12 +1,22 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: /Users/alexandermostovenko/tmp/polyglot-demo/src/index.js:4
+#: /home/a.mostovenko/workspace/polyglot-demo/src/index.js:5
 msgid "test message"
 msgstr "test message [translation]"
 
-#: /Users/alexandermostovenko/tmp/polyglot-demo/src/index.js:9
+#: /home/a.mostovenko/workspace/polyglot-demo/src/index.js:11
 msgid "test message with formatting ${ a }"
 msgstr "test message with formatting ${ a } [translation]"
+
+#: /home/a.mostovenko/workspace/polyglot-demo/src/module.js:2
+msgid "literal from module"
+msgstr "literal from module [translation]"
+
+#: /home/a.mostovenko/workspace/polyglot-demo/src/plurals.js:2
+msgid "this one returns ${ n } bananas"
+msgid_plural "this one returns ${ n } bananas"
+msgstr[0] "this one returns ${ n } banana [translation]"
+msgstr[1] "this one returns ${ n } bananas [translation]"

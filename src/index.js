@@ -1,8 +1,9 @@
 import moduleFunc from './module';
-
+import { plural } from './plurals';
 
 function test() {
     console.log(gt`test message`);
+    plural();
 }
 
 function test2() {

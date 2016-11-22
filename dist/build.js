@@ -52,12 +52,15 @@
 
 	var _module2 = _interopRequireDefault(_module);
 
+	var _plurals = __webpack_require__(2);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function test() {
 	    console.log('test message');
+	    (0, _plurals.plural)();
 	}
 
 	function test2() {
@@ -95,6 +98,24 @@
 
 	function moduleFunc2() {
 	    console.log(other(_templateObject));
+	}
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.plural = plural;
+	function plural(n) {
+		return "this one returns " + n + " bananas";
+	}
+
+	function plural2() {
+		return "this one returns " + n + " bananas";
 	}
 
 /***/ }

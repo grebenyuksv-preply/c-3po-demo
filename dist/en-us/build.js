@@ -52,12 +52,15 @@
 
 	var _module2 = _interopRequireDefault(_module);
 
+	var _plurals = __webpack_require__(2);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function test() {
 	    console.log('test message [translation]');
+	    (0, _plurals.plural)();
 	}
 
 	function test2() {
@@ -90,11 +93,35 @@
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	function moduleFunc() {
-	    console.log("literal from module");
+	    console.log("literal from module [translation]");
 	}
 
 	function moduleFunc2() {
 	    console.log(other(_templateObject));
+	}
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.plural = plural;
+
+	function _ngettext(n, args) {
+		var res = n != 1;
+		return args[typeof res === 'boolean' ? res && 1 || 0 : res];
+	}
+
+	function plural(n) {
+		return _ngettext(n, ["this one returns " + n + " banana [translation]", "this one returns " + n + " bananas [translation]"]);
+	}
+
+	function plural2() {
+		return _ngettext(5, ["this one returns " + n + " banana [translation]", "this one returns " + n + " bananas [translation]"]);
 	}
 
 /***/ }
