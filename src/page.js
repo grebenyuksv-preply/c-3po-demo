@@ -8,8 +8,8 @@ const Page = () => (
         <h2>{ gt`Demo page for polyglot.js library` }</h2>
         <div>{ gt`Choose locale` }</div>
         <ul>
-            <li><a href="/ua">{ gt`Ukrainian` }</a></li>
-            <li><a href="/">{ gt`English` }</a></li>
+            <li><a href={`${HOST}/ua`}>{ gt`Ukrainian` }</a></li>
+            <li><a href={`${HOST}/`}>{ gt`English` }</a></li>
         </ul>
         <PluralDemo/>
     </div>

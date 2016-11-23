@@ -1,6 +1,8 @@
+const webpack = require('webpack');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const extract = Boolean(process.env.WP_EXTRACT);
 const locale = process.env.WP_LOCALE;
+const HOST = process.env.HOST || 'http://127.0.0.1:8000';
 
 const polyglotConfig = {
     extract: extract ? { output: 'dist/translations.pot' } : null,
@@ -40,6 +42,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new StaticSiteGeneratorPlugin('index', localePath('index.html'))
+        new StaticSiteGeneratorPlugin('index', localePath('index.html')),
+        new webpack.DefinePlugin({ HOST: JSON.stringify(HOST) }),
     ]
 };

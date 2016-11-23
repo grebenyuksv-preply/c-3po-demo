@@ -6,10 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-raw": "WP_LOCALE=en-us webpack",
+    "build-raw-p": "HOST=http://alexmost.github.io/polyglot-demo WP_LOCALE=en-us webpack -p",
     "extract": "WP_EXTRACT=1 webpack",
     "merge": "msgmerge i18n/en.po dist/translations.pot -U && msgmerge i18n/ua.po dist/translations.pot -U",
     "build-ua": "WP_LOCALE=ua webpack",
-    "build": "npm run build-raw && npm run build-ua"
+    "build-ua-p": "HOST=http://alexmost.github.io/polyglot-demo WP_LOCALE=ua webpack -p",
+    "build": "npm run build-raw && npm run build-ua",
+    "build-p": "rm -rf docs && npm run build-raw-p && npm run build-ua-p"
   },
   "author": "",
   "license": "ISC",
