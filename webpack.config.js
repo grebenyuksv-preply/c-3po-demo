@@ -1,3 +1,4 @@
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const extract = Boolean(process.env.WP_EXTRACT);
 const locale = process.env.WP_LOCALE;
 
@@ -5,15 +6,19 @@ const polyglotConfig = {
     extract: extract ? { output: 'dist/translations.pot' } : null,
     resolve: locale ? { locale } : null,
     locales: {
-        'en-us': 'dist/translations.po'
+        'en-us': 'i18n/en.po',
+        'ua': 'i18n/ua.po',
     }
 };
 
 const babelConfig = {
-    presets: ['es2015'],
+    presets: ['es2015', 'react'],
     plugins: [['polyglot', polyglotConfig]]
 };
 
+function localePath(path) {
+    return (!locale || locale === 'en-us') ? path : `${locale}/${path}`;
+}
 
 module.exports = {
     entry: {
@@ -21,7 +26,8 @@ module.exports = {
     },
     output: {
         path: './dist',
-        filename: locale ? `${locale}/build.js` : 'build.js'
+        filename: localePath('build.js'),
+        libraryTarget: 'umd'
     },
     module: {
         loaders: [
@@ -32,5 +38,8 @@ module.exports = {
                 query: babelConfig
             },
         ]
-    }
-}
+    },
+    plugins: [
+        new StaticSiteGeneratorPlugin('index', localePath('index.html'))
+    ]
+};

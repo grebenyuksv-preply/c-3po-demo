@@ -21506,6 +21506,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _polyglot = __webpack_require__(179);
 
+	var _PluralDemo = __webpack_require__(180);
+
+	var _PluralDemo2 = _interopRequireDefault(_PluralDemo);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Page = function Page() {
@@ -21515,13 +21519,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _react2.default.createElement(
 	            'h1',
 	            null,
-	            'Polyglot page'
+	            'Polyglot \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430'
 	        ),
 	        _react2.default.createElement(
 	            'h2',
 	            null,
-	            'Demo page for polyglot.js library'
-	        )
+	            '\u0414\u0435\u043C\u043E \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430 \u0434\u043B\u044F polyglot.js \u0431\u0456\u0431\u043B\u0456\u043E\u0442\u0435\u043A\u0438'
+	        ),
+	        _react2.default.createElement(
+	            'div',
+	            null,
+	            '\u041E\u0431\u0435\u0440\u0456\u0442\u044C \u043C\u043E\u0432\u0443'
+	        ),
+	        _react2.default.createElement(
+	            'ul',
+	            null,
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    'a',
+	                    { href: '/ua' },
+	                    '\u0423\u043A\u0440\u0430\u0457\u043D\u0441\u044C\u043A\u0430'
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    'a',
+	                    { href: '/' },
+	                    '\u0410\u043D\u0433\u043B\u0456\u0439\u0441\u044C\u043A\u0430'
+	                )
+	            )
+	        ),
+	        _react2.default.createElement(_PluralDemo2.default, null)
 	    );
 	};
 
@@ -21559,6 +21591,86 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }, '');
 	    };
 	}
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _polyglot = __webpack_require__(179);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _ngettext(n, args) {
+	    var res = n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2;
+	    return args[typeof res === 'boolean' ? res && 1 || 0 : res];
+	}
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var PluralDemo = function (_React$Component) {
+	    _inherits(PluralDemo, _React$Component);
+
+	    function PluralDemo(props) {
+	        _classCallCheck(this, PluralDemo);
+
+	        var _this = _possibleConstructorReturn(this, (PluralDemo.__proto__ || Object.getPrototypeOf(PluralDemo)).call(this, props));
+
+	        _this.state = { count: 0 };
+	        _this.countInc = _this.countInc.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(PluralDemo, [{
+	        key: 'countInc',
+	        value: function countInc() {
+	            this.setState({ count: this.state.count + 1 });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var n = this.state.count;
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    '\u0414\u043E \u0431\u0456\u0441\u0430 \u043D\u0443\u0434\u043D\u0438\u0439 \u043F\u0440\u0438\u043A\u043B\u0430\u0434 \u0437 \u043B\u0456\u0447\u0438\u043B\u044C\u043D\u0438\u043A\u043E\u043C'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _ngettext(n, ['\u0412\u0438 \u043D\u0430\u0442\u0438\u0441\u043D\u0443\u043B\u0438 ' + n + ' \u0440\u0430\u0437', '\u0412\u0438 \u043D\u0430\u0442\u0438\u0441\u043D\u0443\u043B\u0438 ' + n + ' \u0440\u0430\u0437\u0438', '\u0412\u0438 \u043D\u0430\u0442\u0438\u0441\u043D\u0443\u043B\u0438 ' + n + ' \u0440\u0430\u0437\u0456\u0432'])
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: this.countInc },
+	                    '\u041A\u043B\u0456\u043A\u0430\u0439 (\u0442\u0440\u044F\u0441\u0446\u044F \u0442\u0432\u043E\u0457\u0439 \u043C\u0430\u0442\u0435\u0440\u0456)'
+	                )
+	            );
+	        }
+	    }]);
+
+	    return PluralDemo;
+	}(_react2.default.Component);
+
+	exports.default = PluralDemo;
 
 /***/ }
 /******/ ])

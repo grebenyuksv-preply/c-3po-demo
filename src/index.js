@@ -1,19 +1,24 @@
-import moduleFunc from './module';
-import { plural } from './plurals';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Page from './page';
 
-function test() {
-    console.log(gt`test message`);
-    plural();
+
+if (typeof document !== 'undefined') {
+    const outlet = document.getElementById('content');
+    ReactDOM.render(<Page />, outlet);
 }
 
-function test2() {
-    let a = 5;
-    console.log(gt`test message with formatting ${a}`);
-    moduleFunc();
-}
-
-function test3() {
-    let a = 5;
-    console.log(other`just some other random tag`);
-    moduleFunc();
-}
+export default () => {
+    return `<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Polyglot Demo</title>
+        </head>
+        
+        <body>
+        <div id="content"></div>
+        <script src='./build.js' type='text/javascript'></script>
+        </body>
+    </html>`
+};
