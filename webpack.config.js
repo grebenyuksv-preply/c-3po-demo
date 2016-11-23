@@ -25,7 +25,7 @@ module.exports = {
         index: './src/index.js'
     },
     output: {
-        path: './dist',
+        path: './docs',
         filename: localePath('build.js'),
         libraryTarget: 'umd'
     },
