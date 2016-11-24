@@ -28,8 +28,8 @@ msgid "Deadly boring counter demo (but with plurals)"
 msgstr ""
 
 #: src/PluralDemo.js:18
-msgid "You have clicked ${ n } times"
-msgid_plural "You have clicked ${ n } times"
+msgid "You have clicked ${ 0 } times"
+msgid_plural "You have clicked ${ 0 } times"
 msgstr[0] ""
 msgstr[1] ""
 

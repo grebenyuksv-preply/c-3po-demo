@@ -33,11 +33,12 @@ msgid "Deadly boring counter demo (but with plurals)"
 msgstr "До біса нудний приклад з лічильником"
 
 #: src/PluralDemo.js:18
-msgid "You have clicked ${ n } times"
-msgid_plural "You have clicked ${ n } times"
-msgstr[0] "Ви натиснули ${ n } раз"
-msgstr[1] "Ви натиснули ${ n } рази"
-msgstr[2] "Ви натиснули ${ n } разів"
+#, fuzzy
+msgid "You have clicked ${ 0 } times"
+msgid_plural "You have clicked ${ 0 } times"
+msgstr[0] "Ви натиснули ${ 0 } раз"
+msgstr[1] "Ви натиснули ${ 0 } рази"
+msgstr[2] "Ви натиснули ${ 0 } разів"
 
 #: src/PluralDemo.js:19
 msgid "Click me"
