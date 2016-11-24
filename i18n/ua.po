@@ -8,37 +8,37 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: /Users/alexandermostovenko/git/polyglot-demo/src/page.js:7
+#: src/page.js:7
 msgid "Polyglot page"
 msgstr "Polyglot сторінка"
 
-#: /Users/alexandermostovenko/git/polyglot-demo/src/page.js:8
+#: src/page.js:8
 msgid "Demo page for polyglot.js library"
 msgstr "Демо сторінка для polyglot.js бібліотеки"
 
-#: /Users/alexandermostovenko/git/polyglot-demo/src/page.js:9
+#: src/page.js:9
 msgid "Choose locale"
 msgstr "Оберіть мову"
 
-#: /Users/alexandermostovenko/git/polyglot-demo/src/page.js:11
+#: src/page.js:11
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: /Users/alexandermostovenko/git/polyglot-demo/src/page.js:12
+#: src/page.js:12
 msgid "English"
 msgstr "Англійська"
 
-#: /Users/alexandermostovenko/git/polyglot-demo/src/PluralDemo.js:17
+#: src/PluralDemo.js:17
 msgid "Deadly boring counter demo (but with plurals)"
 msgstr "До біса нудний приклад з лічильником"
 
-#: /Users/alexandermostovenko/git/polyglot-demo/src/PluralDemo.js:18
+#: src/PluralDemo.js:18
 msgid "You have clicked ${ n } times"
 msgid_plural "You have clicked ${ n } times"
 msgstr[0] "Ви натиснули ${ n } раз"
 msgstr[1] "Ви натиснули ${ n } рази"
 msgstr[2] "Ви натиснули ${ n } разів"
 
-#: /Users/alexandermostovenko/git/polyglot-demo/src/PluralDemo.js:19
+#: src/PluralDemo.js:19
 msgid "Click me"
 msgstr "Клікай (трясця твоїй матері)"

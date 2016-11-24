@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: src/page.js:7
@@ -30,8 +30,8 @@ msgstr ""
 #: src/PluralDemo.js:18
 msgid "You have clicked ${ n } times"
 msgid_plural "You have clicked ${ n } times"
-msgstr[0] "You have clicked ${ n } time"
-msgstr[1] "You have clicked ${ n } times"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/PluralDemo.js:19
 msgid "Click me"
