@@ -1,4 +1,4 @@
-export function gt(strings, ...exprs) {
+export function t(strings, ...exprs) {
     return strings.reduce((r, s, i) => r + s + (exprs[i] || ''), '')
 }
 

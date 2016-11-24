@@ -1,5 +1,5 @@
 import React from 'react';
-import { gt, nt } from './polyglot';
+import { t, nt } from './polyglot';
 
 class PluralDemo extends React.Component {
     constructor(props) {
@@ -14,9 +14,9 @@ class PluralDemo extends React.Component {
         const n = this.state.count;
         return (
             <div>
-                <h3>{ gt`Deadly boring counter demo (but with plurals)` }</h3>
+                <h3>{ t`Deadly boring counter demo (but with plurals)` }</h3>
                 <div>{ nt(n)`You have clicked ${n} times` }</div>
-                <button onClick={this.countInc}>{ gt`Click me` }</button>
+                <button onClick={this.countInc}>{ t`Click me` }</button>
             </div>
         )
     }
