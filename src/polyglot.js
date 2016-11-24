@@ -3,7 +3,7 @@ export function t(strings, ...exprs) {
 }
 
 export function nt(n) {
-    return function (strins, ...exprs) {
+    return function (strings, ...exprs) {
         return strings.reduce((r, s, i) => r + s + (exprs[i] || ''), '');
     }
 }
