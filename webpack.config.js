@@ -43,6 +43,9 @@ module.exports = {
     },
     plugins: [
         new StaticSiteGeneratorPlugin('index', localePath('index.html')),
-        new webpack.DefinePlugin({ HOST: JSON.stringify(HOST) }),
+        new webpack.DefinePlugin({
+            HOST: JSON.stringify(HOST),
+            'process.env': JSON.stringify(process.env.NODE_ENV),
+        }),
     ]
 };
