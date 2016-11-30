@@ -4,7 +4,7 @@ const extract = Boolean(process.env.WP_EXTRACT);
 const locale = process.env.WP_LOCALE;
 const HOST = process.env.HOST || 'http://127.0.0.1:8000';
 
-const polyglotConfig = {
+const c3poConfig = {
     extract: extract ? { output: 'dist/translations.pot' } : null,
     resolve: locale ? { locale } : null,
     locales: {
@@ -15,7 +15,7 @@ const polyglotConfig = {
 
 const babelConfig = {
     presets: ['es2015', 'react'],
-    plugins: [['polyglot', polyglotConfig]]
+    plugins: [['c-3po', c3poConfig]]
 };
 
 function localePath(path) {
