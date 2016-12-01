@@ -1,5 +1,5 @@
 import React from 'react';
-import { t, nt } from './polyglot';
+import { t, nt } from 'c-3po';
 
 class PluralDemo extends React.Component {
     constructor(props) {

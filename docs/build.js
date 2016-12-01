@@ -21431,7 +21431,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _polyglot = __webpack_require__(179);
+	var _c3po = __webpack_require__(179);
 
 	var _PluralDemo = __webpack_require__(180);
 
@@ -21507,7 +21507,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, '');
 	}
 
-	function nt(n) {
+	function nt() {
 	    return function (strings) {
 	        for (var _len2 = arguments.length, exprs = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
 	            exprs[_key2 - 1] = arguments[_key2];
@@ -21535,7 +21535,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _polyglot = __webpack_require__(179);
+	var _c3po = __webpack_require__(179);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

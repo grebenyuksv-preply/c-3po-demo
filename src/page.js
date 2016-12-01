@@ -1,5 +1,5 @@
 import React from 'react';
-import { t } from './polyglot'
+import { t } from 'c-3po'
 import PluralDemo from './PluralDemo';
 
 const Page = () => (
