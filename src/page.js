@@ -1,6 +1,7 @@
 import React from 'react';
 import { t } from 'c-3po'
 import PluralDemo from './PluralDemo';
+import Multiline from './multiline'
 
 const Page = () => (
     <div>
@@ -12,6 +13,7 @@ const Page = () => (
             <li><a href={`${HOST}/`}>{ t`English` }</a></li>
         </ul>
         <PluralDemo/>
+        <Multiline/>
     </div>
 );
 

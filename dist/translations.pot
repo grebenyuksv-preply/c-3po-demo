@@ -3,23 +3,23 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: src/page.js:7
+#: src/page.js:8
 msgid "Polyglot page"
 msgstr ""
 
-#: src/page.js:8
+#: src/page.js:9
 msgid "Demo page for polyglot.js library"
 msgstr ""
 
-#: src/page.js:9
+#: src/page.js:10
 msgid "Choose locale"
 msgstr ""
 
-#: src/page.js:11
+#: src/page.js:12
 msgid "Ukrainian"
 msgstr ""
 
-#: src/page.js:12
+#: src/page.js:13
 msgid "English"
 msgstr ""
 
@@ -35,4 +35,11 @@ msgstr[1] ""
 
 #: src/PluralDemo.js:19
 msgid "Click me"
+msgstr ""
+
+#: src/multiline.js:7
+msgid ""
+"this is multiline\n"
+"demo for demonstrating\n"
+"multiline comments"
 msgstr ""
