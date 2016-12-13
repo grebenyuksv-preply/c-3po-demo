@@ -6,7 +6,7 @@ const Multiline = () => (
         <textarea>
             {t`this is multiline
             demo for demonstrating
-            multiline comments`}
+            multiline strings`}
         </textarea>
     </div>
 )
