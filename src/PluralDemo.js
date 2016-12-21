@@ -15,7 +15,7 @@ class PluralDemo extends React.Component {
         return (
             <div>
                 <h3>{ i18n`Deadly boring counter demo (but with plurals)` }</h3>
-                <div>{ nt(n)`You have clicked ${n} times` }</div>
+                <div>{ nt(this.state.count)`You have clicked ${this.state.count} times` }</div>
                 <button onClick={this.countInc}>{ i18n`Click me` }</button>
             </div>
         )
