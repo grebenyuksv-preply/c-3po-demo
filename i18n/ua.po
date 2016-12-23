@@ -8,38 +8,38 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/page.js:8
+#: src/page.js:9
 msgid "Polyglot page"
 msgstr "Polyglot сторінка"
 
-#: src/page.js:9
+#: src/page.js:10
 msgid "Demo page for polyglot.js library"
 msgstr "Демо сторінка для polyglot.js бібліотеки"
 
-#: src/page.js:10
+#: src/page.js:11
 msgid "Choose locale"
 msgstr "Оберіть мову"
 
-#: src/page.js:12
+#: src/page.js:13
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: src/page.js:13
+#: src/page.js:14
 msgid "English"
 msgstr "Англійська"
 
-#: src/PluralDemo.js:17
+#: src/PluralDemo.js:16
 msgid "Deadly boring counter demo (but with plurals)"
 msgstr "До біса нудний приклад з лічильником"
 
-#: src/PluralDemo.js:18
+#: src/PluralDemo.js:17
 msgid "You have clicked ${ 0 } times"
 msgid_plural "You have clicked ${ 0 } times"
 msgstr[0] "Ви натиснули ${ 0 } раз"
 msgstr[1] "Ви натиснули ${ 0 } рази"
 msgstr[2] "Ви натиснули ${ 0 } разів"
 
-#: src/PluralDemo.js:19
+#: src/ngettextDemo.js:19
 msgid "Click me"
 msgstr "Клікай (трясця твоїй матері)"
 
@@ -52,3 +52,14 @@ msgstr ""
 "це багато букоф\n"
 "для демо коли\n"
 "багато букоф"
+
+#: src/ngettextDemo.js:17
+msgid "Ngettext demo"
+msgstr "Ngettext демо"
+
+#: src/ngettextDemo.js:18
+msgid "time ${ 0 } clicked"
+msgid_plural "times ${ 0 } clicked"
+msgstr[0] "клікнули ${ 0 } раз"
+msgstr[1] "клікнули ${ 0 } рази"
+msgstr[2] "клікнули ${ 0 } разів"

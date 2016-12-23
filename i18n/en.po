@@ -3,37 +3,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: src/page.js:8
+#: src/page.js:9
 msgid "Polyglot page"
 msgstr ""
 
-#: src/page.js:9
+#: src/page.js:10
 msgid "Demo page for polyglot.js library"
 msgstr ""
 
-#: src/page.js:10
+#: src/page.js:11
 msgid "Choose locale"
 msgstr ""
 
-#: src/page.js:12
+#: src/page.js:13
 msgid "Ukrainian"
 msgstr ""
 
-#: src/page.js:13
+#: src/page.js:14
 msgid "English"
 msgstr ""
 
-#: src/PluralDemo.js:17
+#: src/PluralDemo.js:16
 msgid "Deadly boring counter demo (but with plurals)"
 msgstr ""
 
-#: src/PluralDemo.js:18
+#: src/PluralDemo.js:17
 msgid "You have clicked ${ 0 } times"
 msgid_plural "You have clicked ${ 0 } times"
 msgstr[0] "You have clicked ${ 0 } time"
 msgstr[1] "You have clicked ${ 0 } times"
 
-#: src/PluralDemo.js:19
+#: src/ngettextDemo.js:19
 msgid "Click me"
 msgstr ""
 
@@ -43,3 +43,13 @@ msgid ""
 "demo for demonstrating\n"
 "multiline strings"
 msgstr ""
+
+#: src/ngettextDemo.js:17
+msgid "Ngettext demo"
+msgstr ""
+
+#: src/ngettextDemo.js:18
+msgid "time ${ 0 } clicked"
+msgid_plural "times ${ 0 } clicked"
+msgstr[0] ""
+msgstr[1] ""

@@ -2,6 +2,7 @@ import React from 'react';
 import { t } from 'c-3po'
 import PluralDemo from './PluralDemo';
 import Multiline from './multiline'
+import Ngettext from './ngettextDemo';
 
 const Page = () => (
     <div>
@@ -14,6 +15,7 @@ const Page = () => (
         </ul>
         <PluralDemo/>
         <Multiline/>
+        <Ngettext/>
     </div>
 );
 

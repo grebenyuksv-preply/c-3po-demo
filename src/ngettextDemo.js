@@ -1,7 +1,7 @@
 import React from 'react';
-import { t as i18n, nt } from 'c-3po';
+import { t, ngettext, msgid } from 'c-3po';
 
-class PluralDemo extends React.Component {
+class NgettextDemo extends React.Component {
     constructor(props) {
         super(props);
         this.state = { count: 0 };
@@ -14,12 +14,14 @@ class PluralDemo extends React.Component {
         const n = this.state.count;
         return (
             <div>
-                <h3>{ i18n`Deadly boring counter demo (but with plurals)` }</h3>
-                <div>{ nt(n)`You have clicked ${ n } times` }</div>
-                <button onClick={this.countInc}>{ i18n`Click me` }</button>
+                <h3>{ t`Ngettext demo` }</h3>
+                <div>
+                    { ngettext(msgid`time ${n} clicked`, `times ${n} clicked`, n) }
+                </div>
+                <button onClick={this.countInc}>{ t`Click me` }</button>
             </div>
         )
     }
 }
 
-export default PluralDemo;
+export default NgettextDemo;

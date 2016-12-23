@@ -667,12 +667,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * will remain to ensure logic does not differ in production.
 	 */
 
-	function invariant(condition, format, a, b, c, d, e, f) {
-	  if ((undefined) !== 'production') {
+	var validateFormat = function validateFormat(format) {};
+
+	if ((undefined) !== 'production') {
+	  validateFormat = function validateFormat(format) {
 	    if (format === undefined) {
 	      throw new Error('invariant requires an error message argument');
 	    }
-	  }
+	  };
+	}
+
+	function invariant(condition, format, a, b, c, d, e, f) {
+	  validateFormat(format);
 
 	  if (!condition) {
 	    var error;
@@ -21441,6 +21447,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _multiline2 = _interopRequireDefault(_multiline);
 
+	var _ngettextDemo = __webpack_require__(182);
+
+	var _ngettextDemo2 = _interopRequireDefault(_ngettextDemo);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Page = function Page() {
@@ -21485,7 +21495,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            )
 	        ),
 	        _react2.default.createElement(_PluralDemo2.default, null),
-	        _react2.default.createElement(_multiline2.default, null)
+	        _react2.default.createElement(_multiline2.default, null),
+	        _react2.default.createElement(_ngettextDemo2.default, null)
 	    );
 	};
 
@@ -21502,15 +21513,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.t = t;
 	exports.nt = nt;
+	exports.msgid = msgid;
 	exports.gettext = gettext;
+	exports.ngettext = ngettext;
 	function t(strings) {
 	    for (var _len = arguments.length, exprs = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
 	        exprs[_key - 1] = arguments[_key];
 	    }
 
-	    return strings.reduce(function (r, s, i) {
-	        return r + s + (exprs[i] || '');
-	    }, '');
+	    if (strings && strings.reduce) {
+	        return strings.reduce(function (r, s, i) {
+	            return r + s + (exprs[i] || '');
+	        }, '');
+	    }
+	    return strings;
 	}
 
 	function nt() {
@@ -21519,14 +21535,34 @@ return /******/ (function(modules) { // webpackBootstrap
 	            exprs[_key2 - 1] = arguments[_key2];
 	        }
 
+	        if (strings && strings.reduce) {
+	            return strings.reduce(function (r, s, i) {
+	                return r + s + (exprs[i] || '');
+	            }, '');
+	        }
+	        return strings;
+	    };
+	}
+
+	function msgid(strings) {
+	    for (var _len3 = arguments.length, exprs = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+	        exprs[_key3 - 1] = arguments[_key3];
+	    }
+
+	    if (strings && strings.reduce) {
 	        return strings.reduce(function (r, s, i) {
 	            return r + s + (exprs[i] || '');
 	        }, '');
-	    };
+	    }
+	    return strings;
 	}
 
 	function gettext(text) {
 	    return text;
+	}
+
+	function ngettext(str) {
+	    return str;
 	}
 
 /***/ },
@@ -21541,8 +21577,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _templateObject = _taggedTemplateLiteral(['You have clicked ', ' times'], ['You have clicked ', ' times']);
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -21551,7 +21585,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+	function _tag_ngettext(n, args) {
+	    return args[+(n != 1)];
+	}
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -21592,7 +21628,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                _react2.default.createElement(
 	                    'div',
 	                    null,
-	                    (0, _c3po.nt)(this.state.count)(_templateObject, this.state.count)
+	                    _tag_ngettext(n, ['You have clicked ' + n + ' time', 'You have clicked ' + n + ' times'])
 	                ),
 	                _react2.default.createElement(
 	                    'button',
@@ -21639,6 +21675,85 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	exports.default = Multiline;
+
+/***/ },
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _c3po = __webpack_require__(179);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _tag_ngettext(n, args) {
+	    return args[+(n != 1)];
+	}
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NgettextDemo = function (_React$Component) {
+	    _inherits(NgettextDemo, _React$Component);
+
+	    function NgettextDemo(props) {
+	        _classCallCheck(this, NgettextDemo);
+
+	        var _this = _possibleConstructorReturn(this, (NgettextDemo.__proto__ || Object.getPrototypeOf(NgettextDemo)).call(this, props));
+
+	        _this.state = { count: 0 };
+	        _this.countInc = _this.countInc.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(NgettextDemo, [{
+	        key: 'countInc',
+	        value: function countInc() {
+	            this.setState({ count: this.state.count + 1 });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var n = this.state.count;
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'Ngettext demo'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _tag_ngettext(n, ['time ' + n + ' clicked', 'times ' + n + ' clicked'])
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: this.countInc },
+	                    'Click me'
+	                )
+	            );
+	        }
+	    }]);
+
+	    return NgettextDemo;
+	}(_react2.default.Component);
+
+	exports.default = NgettextDemo;
 
 /***/ }
 /******/ ])
