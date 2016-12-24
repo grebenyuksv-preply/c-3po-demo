@@ -16,7 +16,7 @@ class NgettextDemo extends React.Component {
             <div>
                 <h3>{ t`Ngettext demo` }</h3>
                 <div>
-                    { ngettext(msgid`time ${n} clicked`, `times ${n} clicked`, n) }
+                    { ngettext(msgid`${n} time clicked`, `${n} times clicked`, n) }
                 </div>
                 <button onClick={this.countInc}>{ t`Click me` }</button>
             </div>
