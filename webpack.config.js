@@ -6,12 +6,11 @@ const HOST = process.env.HOST || 'http://127.0.0.1:8000';
 
 const c3poConfig = {
     extract: extract ? { output: 'dist/translations.pot' } : null,
-    resolve: locale ? { locale } : null,
-    locales: {
-        'en-us': 'i18n/en.po',
-        'ua': 'i18n/ua.po',
-    }
 };
+
+if (locale) {
+    c3poConfig.resolve = { translations: `i18n/${locale}.po` };
+}
 
 const babelConfig = {
     presets: ['es2015', 'react'],
@@ -19,7 +18,7 @@ const babelConfig = {
 };
 
 function localePath(path) {
-    return (!locale || locale === 'en-us') ? path : `${locale}/${path}`;
+    return (!locale) ? path : `${locale}/${path}`;
 }
 
 module.exports = {

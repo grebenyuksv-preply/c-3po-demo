@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-raw": "WP_LOCALE=en-us webpack",
-    "build-raw-p": "NODE_ENV=production HOST=http://c-3po-org.github.io/c-3po-demo WP_LOCALE=en-us webpack -p",
+    "build-raw": "webpack",
+    "watch": "webpack -w",
+    "build-raw-p": "NODE_ENV=production HOST=http://c-3po-org.github.io/c-3po-demo webpack -p",
     "extract": "WP_EXTRACT=1 webpack",
     "merge": "msgmerge i18n/en.po dist/translations.pot -U && msgmerge i18n/ua.po dist/translations.pot -U",
     "build-ua": "WP_LOCALE=ua webpack",
@@ -19,14 +20,14 @@
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
-    "babel-plugin-c-3po": "0.0.27",
+    "babel-plugin-c-3po": "0.0.35",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "static-site-generator-webpack-plugin": "^3.1.0",
     "webpack": "^1.13.3"
   },
   "dependencies": {
-    "c-3po": "0.0.4",
+    "c-3po": "0.0.6",
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
   }
