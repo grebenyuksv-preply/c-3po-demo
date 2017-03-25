@@ -9,12 +9,12 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: src/page.js:9
-msgid "Polyglot page"
-msgstr "Polyglot сторінка"
+msgid "c-3po"
+msgstr "c-3po"
 
 #: src/page.js:10
-msgid "Demo page for polyglot.js library"
-msgstr "Демо сторінка для polyglot.js бібліотеки"
+msgid "Demo page for c-3po and react library"
+msgstr "Демо сторінка для с-3po та react бібліотеки"
 
 #: src/page.js:11
 msgid "Choose locale"
@@ -28,6 +28,40 @@ msgstr "Українська"
 msgid "English"
 msgstr "Англійська"
 
+#: src/ngettextDemo.js:16
+msgid "me"
+msgstr "мене"
+
+#: src/ngettextDemo.js:19
+msgid "Ngettext demo"
+msgstr "Ngettext демо"
+
+#: src/ngettextDemo.js:21
+msgid "${ n } time clicked"
+msgid_plural "${ n } times clicked"
+msgstr[0] "клікнули ${ n } раз"
+msgstr[1] "клікнули ${ n } рази"
+msgstr[2] "клікнули ${ n } разів"
+
+#: src/ngettextDemo.js:24
+msgid "Click ${ btn }"
+msgstr "Натисни ${ btn }"
+
+#: src/PluralDemo.js:17
+msgid "Deadly boring counter demo (but with plurals)"
+msgstr "До біса нудний приклад з лічильником"
+
+#: src/PluralDemo.js:18
+msgid "You have clicked ${ n } times"
+msgid_plural "You have clicked ${ n } times"
+msgstr[0] "Ви натиснули ${ n } раз"
+msgstr[1] "Ви натиснули ${ n } рази"
+msgstr[2] "Ви натиснули ${ n } разів"
+
+#: src/PluralDemo.js:19
+msgid "Click me"
+msgstr "Клікай (трясця твоїй матері)"
+
 #: src/multiline.js:7
 msgid ""
 "this is multiline\n"
@@ -37,29 +71,3 @@ msgstr ""
 "це багато букоф\n"
 "для демо коли\n"
 "багато букоф"
-
-#: src/PluralDemo.js:17
-msgid "Deadly boring counter demo (but with plurals)"
-msgstr "До біса нудний приклад з лічильником"
-
-#: src/PluralDemo.js:18
-msgid "You have clicked ${ 0 } times"
-msgid_plural "You have clicked ${ 0 } times"
-msgstr[0] "Ви натиснули ${ 0 } раз"
-msgstr[1] "Ви натиснули ${ 0 } рази"
-msgstr[2] "Ви натиснули ${ 0 } разів"
-
-#: src/ngettextDemo.js:21
-msgid "Click me"
-msgstr "Клікай (трясця твоїй матері)"
-
-#: src/ngettextDemo.js:17
-msgid "Ngettext demo"
-msgstr "Ngettext демо"
-
-#: src/ngettextDemo.js:19
-msgid "${ 0 } time clicked"
-msgid_plural "${ 0 } times clicked"
-msgstr[0] "клікнули ${ 0 } раз"
-msgstr[1] "клікнули ${ 0 } рази"
-msgstr[2] "клікнули ${ 0 } разів"

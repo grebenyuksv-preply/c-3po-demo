@@ -6,8 +6,8 @@ import Ngettext from './ngettextDemo';
 
 const Page = () => (
     <div>
-        <h1>{ t`Polyglot page` }</h1>
-        <h2>{ t`Demo page for polyglot.js library` }</h2>
+        <h1>{ t`c-3po` }</h1>
+        <h2>{ t`Demo page for c-3po and react library` }</h2>
         <div>{ t`Choose locale` }</div>
         <ul>
             <li><a href={`${HOST}/ua`}>{ t`Ukrainian` }</a></li>

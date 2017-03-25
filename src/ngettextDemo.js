@@ -1,5 +1,5 @@
 import React from 'react';
-import { t, ngettext, msgid } from 'c-3po';
+import { t, ngettext, msgid, jt } from 'c-3po';
 
 class NgettextDemo extends React.Component {
     constructor(props) {
@@ -10,15 +10,19 @@ class NgettextDemo extends React.Component {
     countInc() {
         this.setState({ count: this.state.count + 1 });
     }
+
     render() {
         const n = this.state.count;
+        const btn = <button onClick={this.countInc}>{ t`me` }</button>;
         return (
             <div>
                 <h3>{ t`Ngettext demo` }</h3>
                 <div>
                     { ngettext(msgid`${n} time clicked`, `${n} times clicked`, n) }
                 </div>
-                <button onClick={this.countInc}>{ t`Click me` }</button>
+                <span>
+                    { jt`Click ${ btn }`}
+                </span>
             </div>
         )
     }

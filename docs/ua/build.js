@@ -79,9 +79,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _reactDom2.default.render(_react2.default.createElement(_page2.default, null), outlet);
 	}
 
-	exports.default = function (_ref) {
-	    var translations = _ref.translations;
-
+	exports.default = function () {
 	    return '<!DOCTYPE html>\n        <html>\n        <head>\n            <meta charset="utf-8">\n            <title>Polyglot Demo</title>\n        </head>\n        \n        <body>\n        <div id="content"></div>\n        <script src=\'./build.js\' type=\'text/javascript\'></script>\n        </body>\n    </html>';
 	};
 
@@ -21462,15 +21460,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _c3po = __webpack_require__(179);
 
-	var _PluralDemo = __webpack_require__(180);
+	var _PluralDemo = __webpack_require__(182);
 
 	var _PluralDemo2 = _interopRequireDefault(_PluralDemo);
 
-	var _multiline = __webpack_require__(181);
+	var _multiline = __webpack_require__(183);
 
 	var _multiline2 = _interopRequireDefault(_multiline);
 
-	var _ngettextDemo = __webpack_require__(182);
+	var _ngettextDemo = __webpack_require__(184);
 
 	var _ngettextDemo2 = _interopRequireDefault(_ngettextDemo);
 
@@ -21483,12 +21481,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _react2.default.createElement(
 	            'h1',
 	            null,
-	            'Polyglot \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430'
+	            'c-3po'
 	        ),
 	        _react2.default.createElement(
 	            'h2',
 	            null,
-	            '\u0414\u0435\u043C\u043E \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430 \u0434\u043B\u044F polyglot.js \u0431\u0456\u0431\u043B\u0456\u043E\u0442\u0435\u043A\u0438'
+	            '\u0414\u0435\u043C\u043E \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430 \u0434\u043B\u044F \u0441-3po \u0442\u0430 react \u0431\u0456\u0431\u043B\u0456\u043E\u0442\u0435\u043A\u0438'
 	        ),
 	        _react2.default.createElement(
 	            'div',
@@ -21527,7 +21525,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 179 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -21535,61 +21533,289 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: true
 	});
 	exports.t = t;
+	exports.rt = rt;
 	exports.nt = nt;
 	exports.msgid = msgid;
 	exports.gettext = gettext;
 	exports.ngettext = ngettext;
-	function t(strings) {
-	    for (var _len = arguments.length, exprs = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-	        exprs[_key - 1] = arguments[_key];
-	    }
+	exports.addLocale = addLocale;
+	exports.useLocale = useLocale;
 
+	var _utils = __webpack_require__(180);
+
+	var _reactUtils = __webpack_require__(181);
+
+	var locales = {};
+	var currentLocale = void 0;
+
+	function findTransObj(locale, str) {
+	    return locales[locale] ? locales[locale].translations[''][str] : null;
+	}
+
+	function t(strings) {
 	    if (strings && strings.reduce) {
-	        return strings.reduce(function (r, s, i) {
-	            return r + s + (exprs[i] || '');
-	        }, '');
+	        for (var _len = arguments.length, exprs = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	            exprs[_key - 1] = arguments[_key];
+	        }
+
+	        var id = (0, _utils.getMsgid)(strings, exprs);
+	        var transObj = findTransObj(currentLocale, id);
+	        return transObj ? (0, _utils.msgid2Orig)(transObj.msgstr[0], exprs) : id;
+	    }
+	    return strings;
+	}
+
+	function rt(strings) {
+	    if (strings && strings.reduce) {
+	        for (var _len2 = arguments.length, exprs = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+	            exprs[_key2 - 1] = arguments[_key2];
+	        }
+
+	        var id = (0, _reactUtils.getReactMsgid)(strings, exprs);
+	        var transObj = findTransObj(currentLocale, id);
+	        return transObj ? (0, _reactUtils.reactMsgid2Orig)(transObj.msgstr[0], exprs) : (0, _reactUtils.buildArr)(strings, exprs);
 	    }
 	    return strings;
 	}
 
 	function nt() {
 	    return function (strings) {
-	        for (var _len2 = arguments.length, exprs = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-	            exprs[_key2 - 1] = arguments[_key2];
+	        for (var _len3 = arguments.length, exprs = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+	            exprs[_key3 - 1] = arguments[_key3];
 	        }
 
 	        if (strings && strings.reduce) {
-	            return strings.reduce(function (r, s, i) {
-	                return r + s + (exprs[i] || '');
-	            }, '');
+	            return (0, _utils.buildStr)(strings, exprs);
 	        }
 	        return strings;
 	    };
 	}
 
 	function msgid(strings) {
-	    for (var _len3 = arguments.length, exprs = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
-	        exprs[_key3 - 1] = arguments[_key3];
+	    /* eslint-disable no-new-wrappers */
+	    if (strings && strings.reduce) {
+	        for (var _len4 = arguments.length, exprs = Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
+	            exprs[_key4 - 1] = arguments[_key4];
+	        }
+
+	        var result = new String((0, _utils.buildStr)(strings, exprs));
+	        result._strs = strings;
+	        result._exprs = exprs;
+	        return result;
 	    }
 
-	    if (strings && strings.reduce) {
-	        return strings.reduce(function (r, s, i) {
-	            return r + s + (exprs[i] || '');
-	        }, '');
-	    }
 	    return strings;
 	}
 
-	function gettext(text) {
-	    return text;
+	function gettext(id) {
+	    var transObj = findTransObj(currentLocale, id);
+	    return transObj ? transObj.msgstr[0] : id;
 	}
 
-	function ngettext(str) {
-	    return str;
+	function ngettext() {
+	    for (var _len5 = arguments.length, args = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+	        args[_key5] = arguments[_key5];
+	    }
+
+	    var id = (0, _utils.getMsgid)(args[0]._strs, args[0]._exprs);
+	    var n = args[args.length - 1];
+	    var trans = findTransObj(currentLocale, id);
+	    var headers = trans ? locales[currentLocale].headers : _utils.defaultHeaders;
+	    var pluralStr = (0, _utils.getPluralFunc)(headers);
+	    var pluralFn = (0, _utils.makePluralFunc)(pluralStr);
+
+	    if (!trans) {
+	        var forms = args.slice(1, -1);
+	        forms.unshift(args[0].toString());
+	        return pluralFn(n, forms);
+	    }
+
+	    return (0, _utils.msgid2Orig)(pluralFn(n, trans.msgstr), args[0]._exprs);
+	}
+
+	function addLocale(locale, data) {
+	    locales[locale] = data;
+	}
+
+	function useLocale(locale) {
+	    currentLocale = locale;
 	}
 
 /***/ },
 /* 180 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.makePluralFunc = makePluralFunc;
+	exports.getPluralFunc = getPluralFunc;
+	var getMsgid = exports.getMsgid = function getMsgid(str, exprs) {
+	    return str.reduce(function (s, l, i) {
+	        return s + l + (exprs[i] !== undefined && '${ ' + i + ' }' || '');
+	    }, '');
+	};
+
+	var mem = {};
+	var memoize1 = function memoize1(f) {
+	    return function (arg) {
+	        if (mem[arg]) {
+	            return mem[arg];
+	        }
+	        mem[arg] = f(arg);
+	        return mem[arg];
+	    };
+	};
+
+	var reg = exports.reg = function reg(i) {
+	    return new RegExp('\\$\\{([\\s]+?|\\s?)' + i + '([\\s]+?|\\s?)}');
+	};
+	var memReg = memoize1(reg);
+
+	var msgid2Orig = exports.msgid2Orig = function msgid2Orig(id, exprs) {
+	    return exprs.reduce(function (r, expr, i) {
+	        return r.replace(memReg(i), expr);
+	    }, id);
+	};
+
+	var buildStr = exports.buildStr = function buildStr(strs, exprs) {
+	    return strs.reduce(function (r, s, i) {
+	        return r + s + (exprs[i] || '');
+	    }, '');
+	};
+
+	function pluralFnBody(pluralStr) {
+	    return 'return args[+ (' + pluralStr + ')];';
+	}
+
+	var fnCache = {};
+	function makePluralFunc(pluralStr) {
+	    /* eslint-disable no-new-func */
+	    var fn = fnCache[pluralStr];
+	    if (!fn) {
+	        fn = new Function('n', 'args', pluralFnBody(pluralStr));
+	        fnCache[pluralStr] = fn;
+	    }
+	    return fn;
+	}
+
+	var pluralRegex = /\splural ?=?([\s\S]*);?/;
+	function getPluralFunc(headers) {
+	    var pluralFn = pluralRegex.exec(headers['plural-forms'])[1];
+	    if (pluralFn[pluralFn.length - 1] === ';') {
+	        pluralFn = pluralFn.slice(0, -1);
+	    }
+	    return pluralFn;
+	}
+
+	var defaultHeaders = exports.defaultHeaders = {
+	    'content-type': 'text/plain; charset=UTF-8',
+	    'plural-forms': 'nplurals=2; plural=(n!=1);'
+	};
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.reactMsgid2Orig = exports.getReactMsgid = exports.buildArr = undefined;
+
+	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _utils = __webpack_require__(180);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var reactSymbol = Symbol.for('react.element');
+
+	function isReactEl(el) {
+	    return el.$$typeof === reactSymbol;
+	}
+
+	var buildArr = exports.buildArr = function buildArr(strs, exprs) {
+	    return strs.reduce(function (r, s, i) {
+	        return r.concat(s).concat(exprs[i] || '');
+	    }, []);
+	};
+
+	var getReactMsgid = exports.getReactMsgid = function getReactMsgid(strs, exprs) {
+	    var result = [];
+	    var reactElsCount = 0;
+
+	    strs.forEach(function (str, i) {
+	        var chunk = str;
+	        var expr = exprs[i];
+	        if ((typeof expr === 'undefined' ? 'undefined' : _typeof(expr)) === 'object' && isReactEl(expr)) {
+	            if (typeof expr.props.children === 'string') {
+	                chunk += '<' + reactElsCount + '>' + expr.props.children + '</' + reactElsCount + '>';
+	            } else {
+	                chunk += '${ ' + i + ' }';
+	            }
+	            reactElsCount += 1;
+	        } else if (expr !== undefined) {
+	            chunk += '${ ' + i + ' }';
+	        }
+	        result.push(chunk);
+	    });
+
+	    return result.join('');
+	};
+
+	var reactMsgid2Orig = exports.reactMsgid2Orig = function reactMsgid2Orig(id, exprs) {
+	    var cloneId = id.slice();
+	    var result = [];
+	    var reactIndex = 0;
+	    var simpleIndex = 0;
+
+	    var termReg = /^(.*?)[<\$]/;
+	    var reactReg = function reactReg(i) {
+	        return new RegExp('<' + i + '>(.*)</' + i + '>');
+	    };
+	    var match = cloneId.match(termReg);
+	    var exprIdx = 0;
+	    while (match) {
+	        result.push(match[1]);
+	        cloneId = cloneId.replace(new RegExp('^' + match[1]), '');
+	        if (cloneId[0] === '<') {
+	            var _cloneId$match = cloneId.match(reactReg(reactIndex)),
+	                _cloneId$match2 = _slicedToArray(_cloneId$match, 2),
+	                tagEl = _cloneId$match2[0],
+	                children = _cloneId$match2[1];
+
+	            cloneId = cloneId.replace(tagEl, '');
+	            var expr = exprs[exprIdx];
+	            var newExpr = _react2.default.cloneElement(expr, expr.props, children);
+	            result.push(newExpr);
+	            reactIndex += 1;
+	            exprIdx += 1;
+	        }
+	        if (cloneId[0] === '$') {
+	            var el = cloneId.match((0, _utils.reg)(simpleIndex))[0];
+	            cloneId = cloneId.replace(el, '');
+	            result.push(exprs[exprIdx]);
+	            simpleIndex += 1;
+	            exprIdx += 1;
+	        }
+	        match = cloneId.match(termReg);
+	    }
+
+	    return result;
+	};
+
+/***/ },
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21668,7 +21894,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = PluralDemo;
 
 /***/ },
-/* 181 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21700,7 +21926,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Multiline;
 
 /***/ },
-/* 182 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21751,6 +21977,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: 'render',
 	        value: function render() {
 	            var n = this.state.count;
+	            var btn = _react2.default.createElement(
+	                'button',
+	                { onClick: this.countInc },
+	                '\u043C\u0435\u043D\u0435'
+	            );
 	            return _react2.default.createElement(
 	                'div',
 	                null,
@@ -21765,9 +21996,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    _tag_ngettext(n, ['\u043A\u043B\u0456\u043A\u043D\u0443\u043B\u0438 ' + n + ' \u0440\u0430\u0437', '\u043A\u043B\u0456\u043A\u043D\u0443\u043B\u0438 ' + n + ' \u0440\u0430\u0437\u0438', '\u043A\u043B\u0456\u043A\u043D\u0443\u043B\u0438 ' + n + ' \u0440\u0430\u0437\u0456\u0432'])
 	                ),
 	                _react2.default.createElement(
-	                    'button',
-	                    { onClick: this.countInc },
-	                    '\u041A\u043B\u0456\u043A\u0430\u0439 (\u0442\u0440\u044F\u0441\u0446\u044F \u0442\u0432\u043E\u0457\u0439 \u043C\u0430\u0442\u0435\u0440\u0456)'
+	                    'span',
+	                    null,
+	                    ['\u041D\u0430\u0442\u0438\u0441\u043D\u0438 ', btn]
 	                )
 	            );
 	        }
