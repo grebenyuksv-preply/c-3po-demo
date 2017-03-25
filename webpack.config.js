@@ -3,6 +3,7 @@ const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin'
 const extract = Boolean(process.env.WP_EXTRACT);
 const locale = process.env.WP_LOCALE;
 const HOST = process.env.HOST || 'http://127.0.0.1:8000';
+const path = require('path');
 
 const c3poConfig = {
     extract: extract ? { output: 'dist/translations.pot' } : null,
@@ -13,7 +14,7 @@ if (locale) {
 }
 
 const babelConfig = {
-    presets: ['es2015', 'react'],
+    presets: [['es2015', {modules: false}], 'react'],
     plugins: [['c-3po', c3poConfig]]
 };
 
@@ -26,7 +27,7 @@ module.exports = {
         index: './src/index.js'
     },
     output: {
-        path: './docs',
+        path: path.join(__dirname, './docs'),
         filename: localePath('build.js'),
         libraryTarget: 'umd'
     },
