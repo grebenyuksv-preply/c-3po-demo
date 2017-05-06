@@ -23,6 +23,21 @@ msgstr ""
 msgid "English"
 msgstr ""
 
+#: src/PluralDemo.js:17
+msgid "Deadly boring counter demo (but with plurals)"
+msgstr ""
+
+#: src/PluralDemo.js:19
+msgid "Click me"
+msgstr ""
+
+#: src/multiline.js:7
+msgid ""
+"this is multiline\n"
+"demo for demonstrating\n"
+"multiline strings"
+msgstr ""
+
 #: src/ngettextDemo.js:16
 msgid "me"
 msgstr ""
@@ -39,25 +54,4 @@ msgstr[1] ""
 
 #: src/ngettextDemo.js:24
 msgid "Click ${ btn }"
-msgstr ""
-
-#: src/PluralDemo.js:17
-msgid "Deadly boring counter demo (but with plurals)"
-msgstr ""
-
-#: src/PluralDemo.js:18
-msgid "You have clicked ${ n } times"
-msgid_plural "You have clicked ${ n } times"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/PluralDemo.js:19
-msgid "Click me"
-msgstr ""
-
-#: src/multiline.js:7
-msgid ""
-"this is multiline\n"
-"demo for demonstrating\n"
-"multiline strings"
 msgstr ""
