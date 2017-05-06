@@ -1,5 +1,5 @@
 import React from 'react';
-import { t as i18n, nt } from 'c-3po';
+import { t as i18n, ngettext, msgid } from 'c-3po';
 
 class PluralDemo extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class PluralDemo extends React.Component {
         return (
             <div>
                 <h3>{ i18n`Deadly boring counter demo (but with plurals)` }</h3>
-                <div>{ nt(n)`You have clicked ${ n } times` }</div>
+                <div>{ ngettext(msgid`You have clicked ${ n } time`, `You have clicked ${ n } time`, n) }</div>
                 <button onClick={this.countInc}>{ i18n`Click me` }</button>
             </div>
         )
