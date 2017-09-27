@@ -13,7 +13,7 @@ export default () => {
         <html>
         <head>
             <meta charset="utf-8">
-            <title>Polyglot Demo</title>
+            <title>c-3po demo</title>
         </head>
         
         <body>
