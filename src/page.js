@@ -13,7 +13,6 @@ const Page = () => (
             <li><a href={`${HOST}/ua`}>{ t`Ukrainian` }</a></li>
             <li><a href={`${HOST}/`}>{ t`English` }</a></li>
         </ul>
-        <PluralDemo/>
         <Multiline/>
         <Ngettext/>
     </div>

@@ -24,11 +24,12 @@ function localePath(path) {
 
 module.exports = {
     entry: {
-        index: './src/index.js'
+        index: './src/index.js',
+        'index-multiline': './src/index-multiline.js'
     },
     output: {
         path: path.join(__dirname, './docs'),
-        filename: localePath('build.js'),
+        filename: localePath('build-[name].js'),
         libraryTarget: 'umd'
     },
     module: {
@@ -42,7 +43,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new StaticSiteGeneratorPlugin('index', localePath('index.html')),
         new webpack.DefinePlugin({
             HOST: JSON.stringify(HOST),
             'process.env': {
